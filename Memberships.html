@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Memberships.css">
+</head>
+<body class="bg-[#1E1A3D] text-white">
+    <header class="header">
+        <nav>
+            <ul>
+                <li><a href="index.html" id="home-link">Home</a></li>
+                <li><a href="memberships.html" id="memberships-link">Memberships</a></li>
+                <li>
+                    <select id="language-select" onchange="changeLanguage()">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <!-- Add more languages as needed -->
+                    </select>
+                </li>
+                <li><a href="accounts.html" id="account-link">My Account</a></li>
+                <li><a href="registration.html" class="join-now" id="join-now-link">Join Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container mx-auto py-12">
+        <h1 class="text-center text-3xl font-bold mb-8" id="title">OUR MEMBERSHIPS</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Classic Membership Card -->
+            <div class="bg-white text-[#1E1A3D] p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold text-[#D81B60]" id="classic-title">CLASSIC</h2>
+                <p class="text-[#D81B60]" id="classic-price">Starting at ₱500/month*</p>
+                <p class="mt-4" id="classic-description">Our standard membership, with unlimited access to your selected gym.</p>
+                <div class="mt-6 flex justify-between">
+                    <a href="#" class="text-[#1E1A3D] underline" onclick="showModal('classic-modal')" id="classic-learn-more">Learn More</a>
+                    <a href="#" class="bg-[#1E1A3D] text-white py-2 px-4 rounded" id="classic-join-now">Join Now</a>
+                </div>
+            </div>
+            <!-- Premium Membership Card -->
+            <div class="bg-white text-[#1E1A3D] p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold text-[#FFC107]" id="premium-title">PREMIUM</h2>
+                <p class="text-[#FFC107]" id="premium-price">Starting at ₱1500/month*</p>
+                <p class="mt-4" id="premium-description">Access to any gym, bring guest anytime, and so much more!</p>
+                <div class="mt-6 flex justify-between">
+                    <a href="#" class="text-[#1E1A3D] underline" onclick="showModal('premium-modal')" id="premium-learn-more">Learn More</a>
+                    <a href="#" class="bg-[#1E1A3D] text-white py-2 px-4 rounded" id="premium-join-now">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Classic Modal -->
+    <div id="classic-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white text-[#1E1A3D] p-6 rounded-lg shadow-lg w-11/12 md:w-1/2">
+            <h2 class="text-xl font-bold text-[#D81B60]">CLASSIC</h2>
+            <p class="text-[#D81B60]">Starting at ₱500/month*</p>
+            <p class="mt-4">Unlimited Access to Home Club<br>Free Fitness Training<br>Free Wifi</p>
+            <div class="mt-6 flex justify-center">
+                <a href="#" class="bg-[#1E1A3D] text-white py-2 px-4 rounded">Join Classic</a>
+            </div>
+            <button class="mt-4 text-[#1E1A3D] underline" onclick="closeModal('classic-modal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Premium Modal -->
+    <div id="premium-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white text-[#1E1A3D] p-6 rounded-lg shadow-lg w-11/12 md:w-1/2">
+            <h2 class="text-xl font-bold text-[#FFC107]">PREMIUM</h2>
+            <p class="text-[#FFC107]">Starting at ₱1500/month*</p>
+            <p class="mt-4">Use of Any Beloy's Gym Fitness worldwide<br>Bring a Guest anytime<br>50% Off Select Drinks<br>Free Wifi<br>Use of any workout machine, body enhancement machine, and many more!</p>
+            <div class="mt-6 flex justify-center">
+                <a href="#" class="bg-[#1E1A3D] text-white py-2 px-4 rounded">Join Premium</a>
+            </div>
+            <button class="mt-4 text-[#1E1A3D] underline" onclick="closeModal('premium-modal')">Close</button>
+        </div>
+    </div>
+
+    <div class="footer" id="footer-content">
+        Footer content goes here
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                home: "Home",
+                memberships: "Memberships",
+                account: "My Account",
+                joinNow: "Join Now",
+                title: "OUR MEMBERSHIPS",
+                classicTitle: "CLASSIC",
+                classicPrice: "Starting at ₱500/month*",
+                classicDescription: "Our standard membership, with unlimited access to your selected gym.",
+                classicLearnMore: "Learn More",
+                classicJoinNow: "Join Now",
+                premiumTitle: "PREMIUM",
+                premiumPrice: "Starting at ₱1500/month*",
+                premiumDescription: "Access to any gym, bring guest anytime, and so much more!",
+                premiumLearnMore: "Learn More",
+                premiumJoinNow: "Join Now",
+                footer: "Footer content goes here"
+            },
+            es: {
+                home: "Inicio",
+                memberships: "Membresías",
+                account: "Mi Cuenta",
+                joinNow: "Únete ahora",
+                title: "NUESTRAS MEMBRESÍAS",
+                classicTitle: "CLÁSICO",
+                classicPrice: "Desde ₱500/mes*",
+                classicDescription: "Nuestra membresía estándar, con acceso ilimitado a su gimnasio seleccionado.",
+                classicLearnMore: "Aprende más",
+                classicJoinNow: "Únete ahora",
+                premiumTitle: "PREMIUM",
+                premiumPrice: "Desde ₱1500/mes*",
+                premiumDescription: "Acceso a cualquier gimnasio, trae invitados en cualquier momento, ¡y mucho más!",
+                premiumLearnMore: "Aprende más",
+                premiumJoinNow: "Únete ahora",
+                footer: "El contenido del pie de página va aquí"
+            },
+            fr: {
+                home: "Accueil",
+                memberships: "Abonnements",
+                account: "Mon Compte",
+                joinNow: "Rejoignez maintenant",
+                title: "NOS ABONNEMENTS",
+                classicTitle: "CLASSIQUE",
+                classicPrice: "À partir de ₱500/mois*",
+                classicDescription: "Notre abonnement standard, avec un accès illimité à votre salle de sport sélectionnée.",
+                classicLearnMore: "En savoir plus",
+                classicJoinNow: "Rejoignez maintenant",
+                premiumTitle: "PREMIUM",
+                premiumPrice: "À partir de ₱1500/mois*",
+                premiumDescription: "Accès à n'importe quelle salle de sport, amenez des invités à tout moment, et bien plus encore!",
+                premiumLearnMore: "En savoir plus",
+                premiumJoinNow: "Rejoignez maintenant",
+                footer: "Le contenu du pied de page va ici"
+            }
+            // Add more translations as needed
+        };
+
+        function changeLanguage() {
+            const language = document.getElementById('language-select').value;
+            document.getElementById('home-link').innerText = translations[language].home;
+            document.getElementById('memberships-link').innerText = translations[language].memberships;
+            document.getElementById('account-link').innerText = translations[language].account;
+            document.getElementById('join-now-link').innerText = translations[language].joinNow;
+            document.getElementById('title').innerText = translations[language].title;
+            document.getElementById('classic-title').innerText = translations[language].classicTitle;
+            document.getElementById('classic-price').innerText = translations[language].classicPrice;
+            document.getElementById('classic-description').innerText = translations[language].classicDescription;
+            document.getElementById('classic-learn-more').innerText = translations[language].classicLearnMore;
+            document.getElementById('classic-join-now').innerText = translations[language].classicJoinNow;
+            document.getElementById('premium-title').innerText = translations[language].premiumTitle;
+            document.getElementById('premium-price').innerText = translations[language].premiumPrice;
+            document.getElementById('premium-description').innerText = translations[language].premiumDescription;
+            document.getElementById('premium-learn-more').innerText = translations[language].premiumLearnMore;
+            document.getElementById('premium-join-now').innerText = translations[language].premiumJoinNow;
+            document.getElementById('footer-content').innerText = translations[language].footer;
+        }
+
+        function showModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('classic-modal')) {
+                closeModal('classic-modal');
+            } else if (event.target == document.getElementById('premium-modal')) {
+                closeModal('premium-modal');
+            }
+        }
+    </script>
+</body>
+</html>
