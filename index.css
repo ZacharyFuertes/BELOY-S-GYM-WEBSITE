@@ -11,6 +11,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 500px;
 }
 
 .header nav ul {
@@ -46,13 +47,14 @@ body, html {
 }
 
 .background {
-    background-color: #2a1b4a;
-    background-image: url('https://imgs.search.brave.com/g6adHIqf7N3cNH9-fxT94lhAMak19EX1ile7uq1XFRE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA0Lzc3LzA3LzI1/LzM2MF9GXzQ3NzA3/MjU4NV9YUk9Qc25L/aXVHVExTalJLb011/WFJhRFBWajF3d1JV/cS5qcGc');
+    background: rgb(130,45,233);
+    background: radial-gradient(circle, rgba(130,45,233,1) 0%, rgba(141,29,150,1) 100%);
+    background-image: ;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -62,28 +64,13 @@ body, html {
     text-align: center;
     position: relative;
 }
-
-.background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) for opacity */
-    z-index: 1;
-}
-
-.background * {
-    position: relative;
-    z-index: 2;
-}
+  
 
 .background h1 {
     color: #333333;
     color: #FFFFFF;
 
-    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 2px 2px 2px rgba(206,89,55,0);}
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 1px px 2px rgba(206,89,55,0);}
 
 .background p {
     font-size: 1.5rem;
@@ -93,6 +80,8 @@ body, html {
 
 .search-bar {
     display: flex;
+    width: 400px;
+    height: 50px;
     margin-top: 1rem;
     background-color: white;
     border-radius: 50px;
@@ -179,10 +168,6 @@ body, html {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
 
 .feature-card img {
     width: 100%;
@@ -210,7 +195,17 @@ body, html {
     border-radius: 5px;
     cursor: pointer;
 }
+.feature-card:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+/* Click (Active) Effect */
+.feature-card:active {
+    transform: scale(0.95); /* Shrink effect when clicked */
+    transition: transform 0.1s ease;
+}
 .footer {
     color: white;
     text-align: center;
@@ -222,7 +217,7 @@ body, html {
 }
 .programs {
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: white;
     text-align: center;
 }
 
@@ -239,47 +234,83 @@ body, html {
 }
 
 .program-card {
-    background-color: white;
+    display: flex;
+    align-items: center;
+    background-color: #111;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 300px;
-    text-align: center;
-    padding: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 500px; /* Adjust width as needed */
+    text-align: left;
+    color: white;
 }
 
 .program-card img {
-    width: 100%;
-    height: 200px; /* Set a fixed height for all images */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+}
+
+.program-card .content {
+    padding: 1.5rem;
+    flex: 1;
 }
 
 .program-card h3 {
-    font-size: 1.25rem;
-    margin: 1rem 0;
-    color: #2a1b4a;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .program-card p {
     font-size: 1rem;
-    color: #555;
+    color: #ccc;
     margin-bottom: 1rem;
 }
 
 .program-card button {
-    background-color: #2a1b4a;
+    background-color: #e63946;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s;
 }
+
+.program-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.program-card {
+    width: 50%; /* Makes it take up half the screen */
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When the card becomes visible */
+.program-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.program-card:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Click (Active) Effect */
+.program-card:active {
+    transform: scale(0.95); /* Shrink effect when clicked */
+    transition: transform 0.1s ease;
+}
+
+
+
 
 .footer {
     color: white;
@@ -291,4 +322,30 @@ body, html {
     bottom: 0;
 }
 
+@media (max-width: 768px) {
+    .header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .feature-cards, .program-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card, .program-card {
+        width: 90%;
+    }
+
+    .search-bar input {
+        width: 200px;
+    }
+
+    .background h1 {
+        font-size: 2rem;
+    }
+
+    .background p {
+        font-size: 1rem;
+    }
+}
