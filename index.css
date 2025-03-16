@@ -168,6 +168,10 @@ body, html {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
 .feature-card img {
     width: 100%;
@@ -206,15 +210,7 @@ body, html {
     transform: scale(0.95); /* Shrink effect when clicked */
     transition: transform 0.1s ease;
 }
-.footer {
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
+
 .programs {
     padding: 2rem;
     background-color: white;
@@ -308,41 +304,71 @@ body, html {
     transform: scale(0.95); /* Shrink effect when clicked */
     transition: transform 0.1s ease;
 }
-
-
-
-
+/* Fix footer positioning */
 .footer {
+    background: #1e1e1e;  /* Darker shade for better contrast */
     color: white;
     text-align: center;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
     width: 100%;
-    position: absolute;
+    position: relative; /* Ensures normal document flow */
     bottom: 0;
+    left: 0;
 }
 
-@media screen and (max-width: 768px) {
-    .program-card {
-        width: 90%; /* Mas malawak para hindi masikip */
-        margin: auto; /* Centered */
-    }
-
-    .program-card img {
-        width: 100%; /* Para mag-adjust sa laki */
-        height: auto;
-    }
-
-    .program-card .details {
-        width: 100%; /* Para hindi maging masikip */
-        text-align: center;
-    }
-
-    .modal-content {
-        width: 90%; /* Para kasya sa screen */
-    }
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6; /* Improves readability */
 }
+
+.footer h2 {
+    font-size: 1.8rem;
+    color: #ffcc00; /* Highlighted heading */
+    margin-bottom: 15px;
 }
+
+.footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+/* Ensure footer sticks to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+
+@media (max-width: 768px) {
+    .header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-cards, .program-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card, .program-card {
+        width: 90%;
+    }
+
+    .search-bar input {
+        width: 200px;
+    }
+
+    .background h1 {
+        font-size: 2rem;
+    }
 
     .background p {
         font-size: 1rem;
