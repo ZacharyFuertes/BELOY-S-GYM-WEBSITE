@@ -10,7 +10,7 @@
     <header class="header">
         <nav>
             <ul>
-                <li><a href="Memberships.html">MEMBERSHIPS</a></li>
+                <li><a href="memberships.html">MEMBERSHIPS</a></li>
                 <li>
                     <select id="language-select">
                         <option value="en">ENGLISH</option>
@@ -22,9 +22,9 @@
                 <li><a href="accounts.html">MY ACCOUNT</a></li>
                 <li><a href="registration.html" class="join-now">Join Now</a></li>
             </ul>
-        </nav>
+        </nav>  
     </header>
-    <div class="background">
+    <div style="background-color: white;" class="background">
         <h1>MAKE YOUR LIFE MORE BETTER</h1>
         <p>JOIN THE GYM CLUB NOW!</p>
         <div class="search-bar">
@@ -67,33 +67,66 @@
     <div class="program-cards">
         <div class="program-card">
             <img src="waterjpg.jpg" alt="Program 1">
-            <h3>Water Aerobics</h3>
-            <p>Enjoy a low-impact, full-body workout in a refreshing environment.</p>
-            <button>Learn More</button>
+            <div class="content">
+                <h3>Water Aerobics</h3>
+                <p>Enjoy a low-impact, full-body workout in a refreshing environment.</p>
+                <button>Learn More</button>
+            </div>
         </div>
         <div class="program-card">
             <img src="cardio.jpeg" alt="Program 2">
-            <h3>Cardio</h3>
-            <p>Boost your heart health and burn calories with energizing workouts.</p>
-            <button>Learn More</button>
+            <div class="content">
+                <h3>Cardio</h3>
+                <p>Boost your heart health and burn calories with energizing workouts.</p>
+                <button>Learn More</button>
+            </div>
         </div>
         <div class="program-card">
-            <img src="meditation.jpg" alt="Program 3">
-            <h3>Meditation</h3>
-            <p>Find inner peace and mental clarity through guided sessions.</p>
-            <button>Learn More</button>
+            <img src="Meditation.jpg" alt="Program 3">
+            <div class="content">
+                <h3>Meditation</h3>
+                <p>Find inner peace and mental clarity through guided sessions.</p>
+                <button>Learn More</button>
+            </div>
         </div>
         <div class="program-card">
             <img src="yoga.jpg" alt="Program 4">
-            <h3>YOGA</h3>
-            <p>Enhance flexibility, balance, and relaxation with expert-led sessions.</p>
-            <button>Learn More</button>
+            <div class="content">
+                <h3>Yoga</h3>
+                <p>Enhance flexibility, balance, and relaxation with expert-led sessions.</p>
+                <button>Learn More</button>
+            </div>
         </div>
         <div class="program-card">
             <img src="boxing.jpg" alt="Program 5">
-            <h3>BOXING</h3>
-            <p> Build strength, endurance, and confidence with high-intensity training.</p>
-            <button>Learn More</button>
+            <div class="content">
+                <h3>Boxing</h3>
+                <p>Build strength, endurance, and confidence with high-intensity training.</p>
+                <button>Learn More</button>
+            </div>
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".program-card");
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("show");
+                    }, index * 600); // Delays each card to show one by one
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+    
+        cards.forEach(card => observer.observe(card));
+    });
+    </script>
+    
+    
+    
+    
