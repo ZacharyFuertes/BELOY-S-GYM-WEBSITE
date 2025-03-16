@@ -322,28 +322,27 @@ body, html {
     bottom: 0;
 }
 
-@media (max-width: 768px) {
-    .header nav ul {
-        flex-direction: column;
-        align-items: center;
+@media screen and (max-width: 768px) {
+    .program-card {
+        width: 90%; /* Mas malawak para hindi masikip */
+        margin: auto; /* Centered */
     }
 
-    .feature-cards, .program-cards {
-        flex-direction: column;
-        align-items: center;
+    .program-card img {
+        width: 100%; /* Para mag-adjust sa laki */
+        height: auto;
     }
 
-    .feature-card, .program-card {
-        width: 90%;
+    .program-card .details {
+        width: 100%; /* Para hindi maging masikip */
+        text-align: center;
     }
 
-    .search-bar input {
-        width: 200px;
+    .modal-content {
+        width: 90%; /* Para kasya sa screen */
     }
-
-    .background h1 {
-        font-size: 2rem;
-    }
+}
+}
 
     .background p {
         font-size: 1rem;
