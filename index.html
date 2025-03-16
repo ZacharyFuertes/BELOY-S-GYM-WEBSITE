@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
     <title>Gym Website</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="program-card">
-            <img src="meditation.jpg" alt="Program 3">
+            <img src="Meditation.jpg" alt="Program 3">
             <div class="content">
                 <h3>Meditation</h3>
                 <p>Find inner peace and mental clarity through guided sessions.</p>
@@ -107,7 +107,11 @@
         </div>
     </div>
 </section>
-
+<script>
+var siteWidth = 1280;
+var scale = screen.width /siteWidth;
+document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const cards = document.querySelectorAll(".program-card");
