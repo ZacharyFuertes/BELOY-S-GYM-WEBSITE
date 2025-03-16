@@ -24,17 +24,19 @@
             </ul>
         </nav>  
     </header>
-    <div style="background-color: white;" class="background">
+    <div class="background">
         <h1>MAKE YOUR LIFE MORE BETTER</h1>
         <p>JOIN THE GYM CLUB NOW!</p>
         <div class="search-bar">
             <input type="text" placeholder="Search by address, city, or ZIP code">
-            <button><i class="fas fa-search"></i> Find a gym</button>
+            <button>Find a gym</button>
         </div>
+       
     </div>
     
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
+    
+
 </html>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <section class="features">
@@ -82,7 +84,7 @@
             </div>
         </div>
         <div class="program-card">
-            <img src="meditation.jpg" alt="Program 3">
+            <img src="Meditation.jpg" alt="Program 3">
             <div class="content">
                 <h3>Meditation</h3>
                 <p>Find inner peace and mental clarity through guided sessions.</p>
@@ -105,13 +107,14 @@
                 <button>Learn More</button>
             </div>
         </div>
-    </div>
-</section>
+    </div>   
+ </section>
 <script>
 var siteWidth = 1280;
 var scale = screen.width /siteWidth;
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
 </script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const cards = document.querySelectorAll(".program-card");
@@ -130,7 +133,13 @@ document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='
         cards.forEach(card => observer.observe(card));
     });
     </script>
+
     
-    
-    
-    
+<footer class="footer">
+    <div class="footer-content">
+        <h2>About Us</h2>
+        <p>We are dedicated to helping you achieve your fitness goals with top-notch facilities and expert coaching.</p>
+        <p>Join us and be part of a strong and supportive community!</p>
+        <p>&copy; 2025 Gym Club. All Rights Reserved.</p>
+    </div>
+</footer>
