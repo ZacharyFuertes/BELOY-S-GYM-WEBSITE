@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=1280, initial-scale=1">
     <title>Gym Website</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -110,8 +110,9 @@
     </div>   
  </section>
 <script>
-var siteWidth = 1080;
+var siteWidth = 1280;
 var scale = screen.width /siteWidth;
+
 document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
 </script>
 
@@ -132,6 +133,7 @@ document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='
     
         cards.forEach(card => observer.observe(card));
     });
+    
     </script>
 
     
