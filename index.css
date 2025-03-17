@@ -1,66 +1,381 @@
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-    }
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+header {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
 
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.header nav ul li {
+    display: inline;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.header nav ul li a.join-now {
+    background-color: #2a1b4a;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.header nav ul li select {
+    background-color: white;
+    color: black;
+    border: none;
+    font-weight: bold;
+}   
+
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #121212;
+    padding: 50px;
+    height: 80vh;
+    width: 100vw; /* Gamitin ang buong viewport width */
+}
+.text-content {
+    max-height: 50%;
+    max-width: 50%;
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+.text-content p{
+    font-size: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: #ffcc00;
+    
+    left: 50px;
+    position: relative;
+}
+.search-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 400px;
+    height: 45px;
+}
+
+.search-bar button {
+    background-color: #2a1b4a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.image-container {
+    width: 50%;
+    height: 115%;
+    display: flex;
+    justify-content: flex-end;
+    max-height: 100vh; /* Ensure it doesn't overflow */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.image-container img {
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+
+
+    width: 100%;
+    max-height: 115%; /* Keep image inside the container */
+    object-fit: cover;
+    position: relative;
+}
+
+.search-bar button:hover {
+    color: yellow;
+
+}
+
+.features {
+    padding: 2rem;
+    background-color: #ffffff; /* Change background color */
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5rem; /* Adjust font size */
+    margin-bottom: 1rem; /* Adjust margin */
+    color: #2a1b4a; /* Change text color */
+}
+
+.features p {
+    margin-bottom: 2rem; /* Add margin for description text */
+    font-size: 1.2rem; /* Font size for the paragraph */
+    color: #333; /* Change text color */
+}
+
+.find-gym-button {
+    background-color: #2a1b4a; /* Button color */
+    color: #ffffff; /* Button text color */
+    border: none;
+    padding: 1rem 2rem; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for buttons */
+    margin-bottom: 2rem; /* Space below button */
+}
+
+.features {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    color: #2a1b4a;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.feature-card button {
+    background-color: #2a1b4a;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.feature-card:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Click (Active) Effect */
+.feature-card:active {
+    transform: scale(0.95); /* Shrink effect when clicked */
+    transition: transform 0.1s ease;
+}
+
+.programs {
+    padding: 2rem;
+    background-color: white;
+    text-align: center;
+}
+
+.programs h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.program-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.program-card {
+    display: flex;
+    align-items: center;
+    background-color: #2a1b4a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 500px; /* Adjust width as needed */
+    text-align: left;
+    color: white;
+}
+
+.program-card img {
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+}
+
+.program-card .content {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.program-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.program-card p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.program-card button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.program-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;      
+}
+
+.program-card {
+    width: 50%; /* Makes it take up half the screen */
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When the card becomes visible */
+.program-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.program-card:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Click (Active) Effect */
+.program-card:active {
+    transform: scale(0.95); /* Shrink effect when clicked */
+    transition: transform 0.1s ease;
+}
+/* Fix footer positioning */
+.footer {
+    background: #1e1e1e;  /* Darker shade for better contrast */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    width: 100%;
+    position: relative; /* Ensures normal document flow */
+    bottom: 0;
+    left: 0;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6; /* Improves readability */
+}
+
+.footer h2 {
+    font-size: 1.8rem;
+    color: #ffcc00; /* Highlighted heading */
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+/* Ensure footer sticks to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+
+@media (max-width: 768px) {
     .header nav ul {
         flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .background {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding: 30px;
-    }
-
-    .text-content {
-        max-width: 90%;
-        font-size: 24px;
-    }
-
-    .text-content p {
-        font-size: 16px;
-    }
-
-    .search-bar {
-        flex-direction: column;
-        width: 100%;
         align-items: center;
     }
 
-    .search-bar input {
+    .feature-cards, .program-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card, .program-card {
         width: 90%;
     }
 
-    .image-container {
-        width: 100%;
-        height: auto;
-        justify-content: center;
+    .search-bar input {
+        width: 200px;
     }
 
-    .image-container img {
-        width: 80%;
-        height: auto;
+    .background h1 {
+        font-size: 2rem;
     }
 
-    .feature-cards,
-    .program-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature-card,
-    .program-card {
-        width: 100%;
-    }
-
-    .footer {
-        padding: 20px;
-        font-size: 14px;
+    .background p {
+        font-size: 1rem;
     }
 }
