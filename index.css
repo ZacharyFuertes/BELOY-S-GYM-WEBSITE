@@ -103,8 +103,6 @@ header {
 
 .image-container img {
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-
-
     width: 100%;
     max-height: 115%; /* Keep image inside the container */
     object-fit: cover;
@@ -351,7 +349,6 @@ body {
     flex: 1;
 }
 
-
 @media (max-width: 768px) {
     .header nav ul {
         flex-direction: column;
@@ -364,11 +361,11 @@ body {
     }
 
     .feature-card, .program-card {
-        width: 90%;
+        width: 90%; /* Adjust width for smaller screens */
     }
 
     .search-bar input {
-        width: 200px;
+        width: 100%; /* Full width on smaller screens */
     }
 
     .background h1 {
@@ -377,5 +374,62 @@ body {
 
     .background p {
         font-size: 1rem;
+    }
+
+    .program-card {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .program-card img {
+        width: 100%;
+        height: auto;
+        clip-path: none;
+    }
+
+    .program-card .content {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .background {
+        padding: 20px;
+        height: auto;
+    }
+
+    .text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .image-container {
+        display: none; /* Hide image on very small screens */
+    }
+
+    .features, .programs {
+        padding: 1rem;
+    }
+
+    .features h2, .programs h2 {
+        font-size: 1.5rem;
+    }
+
+    .features p, .programs p {
+        font-size: 1rem;
+    }
+
+    .feature-card, .program-card {
+        width: 100%; /* Full width on very small screens */
     }
 }
